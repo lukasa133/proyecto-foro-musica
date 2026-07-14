@@ -35,10 +35,6 @@
 <table>
   <tr>
     <td align="center" width="96">
-      <img src="https://skillicons.dev/icons?i=js" width="48" alt="JavaScript" />
-      <br/>JavaScript
-    </td>
-    <td align="center" width="96">
       <img src="https://skillicons.dev/icons?i=nodejs" width="48" alt="Node.js" />
       <br/>Node.js
     </td>
@@ -56,7 +52,11 @@
       <img src="https://skillicons.dev/icons?i=postgres" width="48" alt="PostgreSQL" />
       <br/>PostgreSQL
     </td>
-  </tr>
+  </tr> 
+  <td align="center" width="96">
+      <img src="https://skillicons.dev/icons?i=pgadmin" width="48" alt="pgAdmin" />
+      <br/>pgAdmin
+  </td>
 </table>
 
 ### Control de versiones
@@ -84,7 +84,9 @@
 </table>
 
 ### Documentación
-_Pendiente por definir_
+Markdown
+README
+Wiki de GitHub (por definir)
 
 ### Contenedores
 <table>
@@ -116,18 +118,12 @@ _Pendiente por definir_
   </tr>
 </table>
 
-### Infraestructura
-_Pendiente por definir_
-
-### Orquestación
-_Pendiente por definir_
-
 ### Pruebas
 <table>
   <tr>
     <td align="center" width="96">
-      <img src="https://skillicons.dev/icons?i=postman" width="48" alt="Postman" />
-      <br/>Postman
+      <img src="https://skillicons.dev/icons?i=bruno" width="48" alt="Bruno" />
+      <br/>Bruno
     </td>
     <td align="center" width="96">
       <img src="https://cdn.simpleicons.org/lighthouse/F44B21" width="48" alt="Lighthouse" />
@@ -137,10 +133,11 @@ _Pendiente por definir_
 </table>
 
 ### Arquitectura
-MVC _(sin ícono disponible en skillicons.dev)_
+Arquitectura en Capas
+Clean Architecture (evolución)
 
 ### Metodología
-Scrum _(sin ícono disponible en skillicons.dev)_
+Scrum 
 
 ### Diagramación
 _Pendiente por definir_
@@ -170,7 +167,7 @@ _Pendiente por definir_
 </table>
 
 ### Acceso Remoto
-SSH _(sin ícono disponible en skillicons.dev)_
+SSH 
 
 ### Incidencias
 <table>
@@ -200,7 +197,7 @@ SSH _(sin ícono disponible en skillicons.dev)_
       <br/>JWT
     </td>
     <td align="center" width="96">
-      bcrypt _(sin ícono disponible)_
+      bcrypt
     </td>
   </tr>
 </table>

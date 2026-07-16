@@ -1,203 +1,229 @@
 
 
-## Tecnologías
+# 🎵 Foro de Música
+
+> Una plataforma comunitaria para descubrir, compartir y debatir sobre música, desarrollada como proyecto de aprendizaje para poner en práctica el ciclo completo de desarrollo de software moderno.
+
+## 📖 Descripción
+
+Foro de Música es una aplicación web enfocada en la interacción entre usuarios apasionados por la música. El objetivo es crear un espacio donde cualquier persona pueda compartir recomendaciones, descubrir nuevos artistas y participar en conversaciones sobre géneros, álbumes y canciones.
+
+Este proyecto nace con un propósito de aprendizaje, buscando aplicar buenas prácticas de desarrollo de software, arquitectura, automatización, despliegue y trabajo colaborativo utilizando herramientas y metodologías empleadas en la industria.
+
 ---
 
-### Frontend
-<table>
-  <tr>
-    <td align="center" width="96">
-      <img src="https://skillicons.dev/icons?i=html" width="48" alt="HTML" />
-      <br/>HTML
-    </td>
-    <td align="center" width="96">
-      <img src="https://skillicons.dev/icons?i=css" width="48" alt="CSS" />
-      <br/>CSS
-    </td>
-    <td align="center" width="96">
-      <img src="https://skillicons.dev/icons?i=js" width="48" alt="JavaScript" />
-      <br/>JavaScript
-    </td>
-  </tr>
-</table>
+# 🎯 Objetivos
 
-### Frameworks
-<table>
-  <tr>
-    <td align="center" width="96">
-      <img src="https://skillicons.dev/icons?i=bootstrap" width="48" alt="Bootstrap" />
-      <br/>Bootstrap
-    </td>
-  </tr>
-</table>
+- Desarrollar una aplicación web full stack.
+- Implementar una arquitectura limpia y escalable.
+- Aplicar buenas prácticas de desarrollo.
+- Automatizar procesos mediante integración y despliegue continuo.
+- Gestionar el proyecto utilizando metodologías ágiles.
+- Documentar el desarrollo como si fuera un proyecto profesional.
 
-### Backend
-<table>
-  <tr>
-    <td align="center" width="96">
-      <img src="https://skillicons.dev/icons?i=nodejs" width="48" alt="Node.js" />
-      <br/>Node.js
-    </td>
-    <td align="center" width="96">
-      <img src="https://skillicons.dev/icons?i=express" width="48" alt="Express.js" />
-      <br/>Express.js
-    </td>
-  </tr>
-</table>
+---
 
-### Database
-<table>
-  <tr>
-    <td align="center" width="96">
-      <img src="https://skillicons.dev/icons?i=postgres" width="48" alt="PostgreSQL" />
-      <br/>PostgreSQL
-    </td>
-  </tr> 
-  <td align="center" width="96">
-      <img src="https://skillicons.dev/icons?i=pgadmin" width="48" alt="pgAdmin" />
-      <br/>pgAdmin
-  </td>
-</table>
+# 🚀 Alcance del MVP
 
-### Control de versiones
-<table>
-  <tr>
-    <td align="center" width="96">
-      <img src="https://skillicons.dev/icons?i=git" width="48" alt="Git" />
-      <br/>Git
-    </td>
-    <td align="center" width="96">
-      <img src="https://skillicons.dev/icons?i=github" width="48" alt="GitHub" />
-      <br/>GitHub
-    </td>
-  </tr>
-</table>
+La primera versión del proyecto incluirá las funcionalidades esenciales para validar la idea.
 
-### Gestión de SCRUM
-<table>
-  <tr>
-    <td align="center" width="96">
-      <img src="https://cdn.simpleicons.org/jira/0052CC" width="48" alt="Jira" />
-      <br/>Jira
-    </td>
-  </tr>
-</table>
+### Usuarios
 
-### Documentación
-Markdown
-README
-Wiki de GitHub (por definir)
+- Registro de usuarios.
+- Inicio de sesión.
+- Gestión básica del perfil.
 
-### Contenedores
-<table>
-  <tr>
-    <td align="center" width="96">
-      <img src="https://skillicons.dev/icons?i=docker" width="48" alt="Docker" />
-      <br/>Docker
-    </td>
-  </tr>
-</table>
+### Publicaciones
 
-### CI/CD
-<table>
-  <tr>
-    <td align="center" width="96">
-      <img src="https://skillicons.dev/icons?i=githubactions" width="48" alt="GitHub Actions" />
-      <br/>GitHub Actions
-    </td>
-  </tr>
-</table>
+- Crear publicaciones.
+- Editar publicaciones propias.
+- Eliminar publicaciones.
+- Visualizar publicaciones de la comunidad.
 
-### Cloud
-<table>
-  <tr>
-    <td align="center" width="96">
-      <img src="https://skillicons.dev/icons?i=aws" width="48" alt="AWS" />
-      <br/>AWS
-    </td>
-  </tr>
-</table>
+### Comentarios
 
-### Pruebas
-<table>
-  <tr>
-    <td align="center" width="96">
-      <img src="https://skillicons.dev/icons?i=bruno" width="48" alt="Bruno" />
-      <br/>Bruno
-    </td>
-    <td align="center" width="96">
-      <img src="https://cdn.simpleicons.org/lighthouse/F44B21" width="48" alt="Lighthouse" />
-      <br/>Lighthouse
-    </td>
-  </tr>
-</table>
+- Agregar comentarios.
+- Editar comentarios propios.
+- Eliminar comentarios.
 
-### Arquitectura
-Arquitectura en Capas
-Clean Architecture (evolución)
+### Búsqueda
 
-### Metodología
-Scrum 
+- Buscar publicaciones.
+- Filtrar por género o etiquetas.
 
-### Diagramación
-_Pendiente por definir_
+### Administración
 
-### Entorno de Desarrollo
-<table>
-  <tr>
-    <td align="center" width="96">
-      <img src="https://skillicons.dev/icons?i=vscode" width="48" alt="Visual Studio Code" />
-      <br/>VS Code
-    </td>
-  </tr>
-</table>
+- Moderación básica del contenido.
 
-### Sistema Operativo
-<table>
-  <tr>
-    <td align="center" width="96">
-      <img src="https://skillicons.dev/icons?i=debian" width="48" alt="Debian" />
-      <br/>Debian
-    </td>
-    <td align="center" width="96">
-      <img src="https://skillicons.dev/icons?i=windows" width="48" alt="Windows" />
-      <br/>Windows
-    </td>
-  </tr>
-</table>
+---
 
-### Acceso Remoto
-SSH 
+# 🛣️ Roadmap
 
-### Incidencias
-<table>
-  <tr>
-    <td align="center" width="96">
-      <img src="https://skillicons.dev/icons?i=github" width="48" alt="GitHub Issues" />
-      <br/>GitHub Issues
-    </td>
-  </tr>
-</table>
+Estas funcionalidades se implementarán en versiones posteriores.
 
-### IA
-<table>
-  <tr>
-    <td align="center" width="96">
-      <img src="https://cdn.simpleicons.org/openai/000000" width="48" alt="ChatGPT" />
-      <br/>ChatGPT
-    </td>
-  </tr>
-</table>
+- Sistema de reputación.
+- Medallas por participación.
+- Upvotes y Downvotes.
+- Reproductores incrustados (YouTube, SoundCloud, Bandcamp).
+- Sistema de recomendaciones.
+- Rabbit Hole (descubrimiento aleatorio).
+- Seguimiento de usuarios.
+- Favoritos.
+- Notificaciones.
 
-### Autenticación
-<table>
-  <tr>
-    <td align="center" width="96">
-      <img src="https://cdn.simpleicons.org/jsonwebtokens/000000" width="48" alt="JWT" />
-      <br/>JWT
-    </td>
-    <td align="center" width="96">
-      bcrypt
-    </td>
-  </tr>
-</table>
+---
+
+# 🏗️ Arquitectura
+
+El proyecto seguirá una arquitectura por capas (Clean Architecture), buscando mantener un bajo acoplamiento entre las diferentes responsabilidades del sistema.
+
+```
+src/
+│
+├── domain/
+│   ├── entities/
+│   ├── repositories/
+│   └── usecases/
+│
+├── application/
+│   ├── services/
+│   └── dtos/
+│
+├── infrastructure/
+│   ├── database/
+│   ├── repositories/
+│   └── config/
+│
+├── presentation/
+│   ├── controllers/
+│   ├── routes/
+│   ├── middlewares/
+│   └── validators/
+│
+└── app.js
+```
+
+---
+
+# 🛠️ Tecnologías
+
+## Frontend
+
+- HTML5
+- CSS3
+- JavaScript
+- Bootstrap
+
+## Backend
+
+- Node.js
+- Express.js
+
+## Base de datos
+
+- PostgreSQL
+
+## DevOps
+
+- Docker
+- GitHub Actions
+- AWS
+
+## Gestión del proyecto
+
+- Git
+- GitHub
+- GitHub Issues
+- Jira
+- Scrum
+
+## Pruebas
+
+- Postman
+- Lighthouse
+
+## Desarrollo
+
+- Visual Studio Code
+
+---
+
+# 🔄 Flujo de trabajo
+
+El proyecto utilizará un flujo de ramas basado en Git.
+
+```
+main
+│
+└── develop
+     ├── feature/login
+     ├── feature/posts
+     ├── feature/comments
+     └── feature/search
+```
+
+Cada nueva funcionalidad será desarrollada en una rama independiente y posteriormente integrada mediante Pull Request.
+
+---
+
+# ⚙️ Automatización
+
+Se implementará un flujo de CI/CD utilizando GitHub Actions para automatizar procesos como:
+
+- Instalación de dependencias.
+- Ejecución de pruebas.
+- Verificación de calidad del código.
+- Construcción de la aplicación.
+- Creación de imágenes Docker.
+- Despliegue automático en AWS.
+
+---
+
+# 🐳 Docker
+
+El proyecto será ejecutado mediante contenedores Docker para garantizar un entorno de desarrollo consistente.
+
+Se contemplan contenedores para:
+
+- Aplicación Backend
+- Base de datos PostgreSQL
+
+---
+
+# 📂 Gestión del proyecto
+
+La planificación y seguimiento del desarrollo se realizará mediante Jira bajo la metodología Scrum.
+
+Se gestionarán:
+
+- Product Backlog
+- Sprint Backlog
+- Historias de Usuario
+- Tareas
+- Bugs
+- Mejoras
+
+---
+
+# 🧪 Calidad del software
+
+Durante el desarrollo se aplicarán prácticas como:
+
+- Control de versiones con Git.
+- Integración Continua.
+- Despliegue Continuo.
+- Revisión de código mediante Pull Requests.
+- Pruebas funcionales con Postman.
+- Evaluación de rendimiento mediante Lighthouse.
+
+---
+
+# 👥 Equipo
+
+Proyecto desarrollado como iniciativa personal de aprendizaje y práctica de desarrollo de software.
+
+---
+
+# 📄 Licencia
+
+Este proyecto se distribuye bajo la licencia MIT.

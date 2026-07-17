@@ -79,28 +79,22 @@ El proyecto seguirá una arquitectura por capas (Clean Architecture), buscando m
 
 ```
 src/
-│
-├── domain/
-│   ├── entities/
-│   ├── repositories/
-│   └── usecases/
-│
-├── application/
-│   ├── services/
-│   └── dtos/
-│
-├── infrastructure/
-│   ├── database/
-│   ├── repositories/
-│   └── config/
-│
-├── presentation/
-│   ├── controllers/
-│   ├── routes/
-│   ├── middlewares/
-│   └── validators/
-│
-└── app.js
+
+controllers/
+
+services/
+
+repositories/
+
+routes/
+
+middlewares/
+
+config/
+
+models/
+
+utils/
 ```
 
 ---

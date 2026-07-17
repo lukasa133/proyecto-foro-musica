@@ -127,7 +127,7 @@ src/
 
 - Docker
 - GitHub Actions
-- AWS
+- Azure
 
 ## Gestión del proyecto
 

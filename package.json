@@ -1,0 +1,23 @@
+{
+  "name": "proyecto-foro-musica",
+  "version": "1.0.0",
+  "description": "> Una plataforma comunitaria para descubrir, compartir y debatir sobre música, desarrollada como proyecto de aprendizaje para poner en práctica el ciclo completo de desarrollo de software moderno.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lukasa133/proyecto-foro-musica.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lukasa133/proyecto-foro-musica/issues"
+  },
+  "homepage": "https://github.com/lukasa133/proyecto-foro-musica#readme",
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}

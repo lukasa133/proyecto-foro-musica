@@ -104,6 +104,7 @@ utils/
 ## Frontend
 
 - HTML5
+- React.js
 - CSS3
 - JavaScript
 - Bootstrap

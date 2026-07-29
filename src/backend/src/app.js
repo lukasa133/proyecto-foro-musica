@@ -7,13 +7,29 @@
     al cliente el mensaje status: ok.
 */ 
 
-const express = require("express"); // Importamos la librería express el cual facilita el uso del protocolo http.
+// Importamos Express, una librería que facilita la creación de servidores HTTP.
+const express = require("express"); 
 const app = express();
+const supabase = require("./infrastructure/database/supabaseClient");
 
-app.get("/health", (req, res) => {
-    res.json({ // se usa el objeto res del parámetro para enviar un mensaje en formato json. 
-        status:"ok"
-    });
+app.get("/health", async (req, res) => {
+    const { data, error } = await supabase
+    .from("health")
+    .select("*");
+
+    if(error){
+        return res.status(500).json({
+            error:"Hubo un error"
+        });
+    }
+    
+    if(data.length === 0){
+        return res.json({
+            message:"No se ha encontrado datos registrados"
+        });
+    }
+    
+    return res.json(data);
 });
 
 module.exports = app; // Permitimos la esportación del modulo de app.

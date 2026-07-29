@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/lukasa133/proyecto-foro-musica#readme",
   "dependencies": {
+    "@supabase/supabase-js": "^2.111.0",
     "dotenv": "^17.4.2",
     "express": "^5.2.1"
   }

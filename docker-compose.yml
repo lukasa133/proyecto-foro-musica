@@ -1,0 +1,15 @@
+services:
+  backend:
+    build:
+      context: ./src/backend
+      dockerfile: Dockerfile
+
+    container_name: foro-musica-backend
+
+    ports:
+      - "3000:3000"
+
+    env_file:
+      - ./src/backend/.env
+
+    restart: unless-stopped

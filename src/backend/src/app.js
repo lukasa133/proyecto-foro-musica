@@ -3,15 +3,20 @@
     el desarrollo y la ejecución de node.js.
 
     El programa consiste en un simple sistema de cliente 
-    servidor que al entrar en la ruta /health se mostrará 
-    al cliente el mensaje status: ok.
+    servidor que al entrar en la ruta /health se realizará un
+    get para obtener la información almacenada en Supabase con Json
+    y un post para realizar un nuevo registro.
 */ 
 
 // Importamos Express, una librería que facilita la creación de servidores HTTP.
 const express = require("express"); 
 const app = express();
+// Establecemos a express un middleware para interpretar peticiones en formato json.
+app.use(express.json());
+// Importamos el modulo del cliente para Supabase
 const supabase = require("./infrastructure/database/supabaseClient");
 
+// Método get que permitirá mostrar los registrado en la tabla health en Supabase.
 app.get("/health", async (req, res) => {
     const { data, error } = await supabase
     .from("health")
@@ -32,4 +37,25 @@ app.get("/health", async (req, res) => {
     return res.json(data);
 });
 
-module.exports = app; // Permitimos la esportación del modulo de app.
+// Método post que permite el envio de información para un registro en la tabla health de Supabase.
+app.post("/health", async (req, res) => {
+    const status = req.body.status;
+    
+    const { data, error } = await supabase
+    .from("health")
+    .insert({
+        status: status
+    })
+    .select();
+
+    if (error) {
+        return res.status(500).json({
+            error: error.message
+        });
+    }
+
+    return res.status(201).json(data);
+})
+
+// Permitimos la esportación del modulo de app.
+module.exports = app; 

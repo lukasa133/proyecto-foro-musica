@@ -6,11 +6,15 @@
     mostrando un mensaje de confirmación al hacerlo.
 */ 
 
-require("dotenv").config(); // La librería dotenv junto al método .config() permite la lectura completa del archivo .env.
-const app = require("./src/app"); // Importamos el módulo de app.
+// La librería dotenv junto al método .config() permite la lectura completa del archivo .env.
+require("dotenv").config(); 
+// Importamos el módulo de app.
+const app = require("./src/app"); 
 
-const PORT = process.env.PORT || 3000; // A la constante PORT se le asigna el puerto declarado en el archivo .env, si no el puerto 3000 directamente.
+// A la constante PORT se le asigna el puerto declarado en el archivo .env, si no el puerto 3000 directamente.
+const PORT = process.env.PORT || 3000; 
 
-app.listen(PORT, () => { // Ejecutamos la app y muestra un mensaje de confirmación en la terminal.
+// Ejecutamos la app y muestra un mensaje de confirmación en la terminal.
+app.listen(PORT, () => { 
     console.log(`Servidores ejecutandose en http://localhost:${PORT}`); 
 });

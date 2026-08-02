@@ -1,0 +1,32 @@
+@startuml
+
+actor Usuario
+
+participant Frontend
+participant "Backend (Express)" as Backend
+database Supabase
+
+Usuario -> Frontend : Ingresar asunto, descripción y archivo de audio. 
+
+Frontend -> Backend : POST /posts
+
+Backend -> Backend : Validar datos de publicación
+
+Backend -> Backend : Validar JWT
+
+alt JWT válido
+
+    Backend -> Supabase : Insertar publicación
+
+    Supabase --> Backend : Publicación creada correctamente
+
+    Backend --> Frontend : 201 created
+
+    Frontend --> Usuario : Publicación creada con éxito
+ 
+else JWT inválido
+
+    Backend --> Frontend : 401 unauthorized
+    Frontend --> Usuario : Debe de iniciar sesión
+end
+@enduml

@@ -1,0 +1,22 @@
+@startuml
+actor Usuario
+
+participant Frontend
+participant "Backend (Express)" as Backend 
+database Supabase
+
+Usuario -> Frontend : Selecciona eliminar \npublicación
+Frontend -> Backend : DELETE /posts/:id
+Backend -> Backend : Validar JWT
+alt JWT válido
+    Backend -> Supabase : Eliminar publicación
+
+    Supabase --> Backend : Publicación eliminada
+    Backend --> Frontend : 200 ok
+    Frontend --> Usuario : Pubicación eliminada \ncorrectamente
+
+else JWT inválido
+    Backend --> Frontend : 401 Unauthorized
+    Frontend --> Usuario : Debe de iniciar sesión
+end
+@enduml

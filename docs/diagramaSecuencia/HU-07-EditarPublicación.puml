@@ -1,0 +1,24 @@
+@startuml
+actor Usuario
+
+participant Frontend
+participant "Backend (Express)" as Backend 
+database Supabase
+
+Usuario -> Frontend : Modifica información \nde la publicación
+Frontend -> Backend : PATCH /posts/:id
+Backend -> Backend : Validar JWT
+
+alt JWT válido
+    Backend -> Backend : Validar datos \nde la publicación
+    Backend -> Supabase : Actualizar publicación
+
+    Supabase --> Backend : Publicación actualizada
+    Backend --> Frontend : 200 ok
+    Frontend --> Usuario : Publicación actualizada \ncorrectamente
+
+else JWT inválido
+    Backend --> Frontend : 401 Unauthorized
+    Frontend --> Usuario : Debe de iniciar sesión
+end
+@enduml

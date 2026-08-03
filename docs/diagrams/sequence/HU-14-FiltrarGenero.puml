@@ -1,0 +1,23 @@
+@startuml
+
+actor Usuario
+
+participant Frontend
+participant "Backend (Express)" as Backend
+database Supabase
+
+Usuario -> Frontend : Selecciona un género
+
+Frontend -> Backend : GET /posts?genre={id}
+
+Backend -> Backend : Validar parámetros
+
+Backend -> Supabase : Consultar publicaciones por género
+
+Supabase --> Backend : Lista de publicaciones
+
+Backend --> Frontend : 200 OK + Publicaciones
+
+Frontend --> Usuario : Mostrar publicaciones filtradas
+
+@enduml

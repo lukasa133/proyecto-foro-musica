@@ -1,0 +1,45 @@
+@startuml
+
+actor Moderador
+
+participant Frontend
+participant "Backend (Express)" as Backend
+database Supabase
+
+Moderador -> Frontend : Selecciona una publicación
+
+Frontend -> Backend : DELETE /posts/{id}
+
+Backend -> Backend : Validar JWT
+
+alt JWT válido
+
+    Backend -> Backend : Verificar permisos de moderador
+
+    alt Permisos válidos
+
+        Backend -> Supabase : Eliminar publicación
+
+        Supabase --> Backend : Publicación eliminada
+
+        Backend --> Frontend : 204 No Content
+
+        Frontend --> Moderador : Publicación eliminada
+
+    else Sin permisos
+
+        Backend --> Frontend : 403 Forbidden
+
+        Frontend --> Moderador : Acceso denegado
+
+    end
+
+else JWT inválido
+
+    Backend --> Frontend : 401 Unauthorized
+
+    Frontend --> Moderador : Debe iniciar sesión
+
+end
+
+@enduml

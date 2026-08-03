@@ -12,7 +12,7 @@ alt JWT válido
     Backend -> Supabase : Eliminar publicación
 
     Supabase --> Backend : Publicación eliminada
-    Backend --> Frontend : 200 ok
+    Backend --> Frontend : 204 No Content
     Frontend --> Usuario : Pubicación eliminada \ncorrectamente
 
 else JWT inválido

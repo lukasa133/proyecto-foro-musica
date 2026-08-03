@@ -7,19 +7,13 @@ participant "Backend (Express)" as Backend
 database Supabase
 
 Usuario -> Frontend : Completa formulario
-
-Frontend -> Backend : POST /users
-
+Frontend -> Backend : POST /auth/register
 Backend -> Backend : Validar datos
-
 Backend -> Backend : Hashear contraseña
-
 Backend -> Supabase : INSERT INTO users
 
 Supabase --> Backend : Usuario creado
-
 Backend --> Frontend : 201 Created
-
 Frontend --> Usuario : Registro exitoso
 
 @enduml

@@ -7,17 +7,11 @@ participant "Backend (Express)" as Backend
 database Supabase
 
 Usuario -> Frontend : Accede al feed principal
-
 Frontend -> Backend : GET /posts
-
 Backend -> Backend : Validar parámetros
-
 Backend -> Supabase : Consultar publicaciones\nordenadas por fecha
 
 Supabase --> Backend : Lista de publicaciones
-
 Backend --> Frontend : 200 OK + Lista de publicaciones
-
 Frontend --> Usuario : Mostrar publicaciones
-
 @enduml

@@ -1,0 +1,35 @@
+@startuml
+
+actor Usuario
+
+participant Frontend
+participant "Backend (Express)" as Backend
+database Supabase
+
+Usuario -> Frontend : Modifica el comentario
+
+Frontend -> Backend : PATCH /comments/{id}
+
+Backend -> Backend : Validar JWT
+
+alt JWT válido
+
+    Backend -> Backend : Validar comentario
+
+    Backend -> Supabase : Actualizar comentario
+
+    Supabase --> Backend : Comentario actualizado
+
+    Backend --> Frontend : 200 OK
+
+    Frontend --> Usuario : Comentario actualizado
+
+else JWT inválido
+
+    Backend --> Frontend : 401 Unauthorized
+
+    Frontend --> Usuario : Debe iniciar sesión
+
+end
+
+@enduml

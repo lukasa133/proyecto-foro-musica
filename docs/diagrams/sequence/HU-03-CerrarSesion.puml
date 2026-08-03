@@ -1,0 +1,15 @@
+@startuml
+
+actor Usuario
+
+participant Frontend
+
+Usuario -> Frontend : Clic en "Cerrar sesión"
+
+Frontend -> Frontend : Eliminar JWT
+
+Frontend -> Frontend : Limpiar datos del usuario
+
+Frontend --> Usuario : Redirigir a /login
+
+@enduml

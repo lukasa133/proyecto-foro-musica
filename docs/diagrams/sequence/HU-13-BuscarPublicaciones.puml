@@ -1,0 +1,23 @@
+@startuml
+
+actor Usuario
+
+participant Frontend
+participant "Backend (Express)" as Backend
+database Supabase
+
+Usuario -> Frontend : Escribe texto de búsqueda
+
+Frontend -> Backend : GET /posts?search={texto}
+
+Backend -> Backend : Validar parámetros
+
+Backend -> Supabase : Buscar publicaciones
+
+Supabase --> Backend : Resultados encontrados
+
+Backend --> Frontend : 200 OK + Publicaciones
+
+Frontend --> Usuario : Mostrar resultados
+
+@enduml

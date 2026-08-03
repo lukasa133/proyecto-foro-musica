@@ -1,0 +1,33 @@
+@startuml
+
+actor Usuario
+
+participant Frontend
+participant "Backend (Express)" as Backend
+database Supabase
+
+Usuario -> Frontend : Selecciona eliminar comentario
+
+Frontend -> Backend : DELETE /comments/{id}
+
+Backend -> Backend : Validar JWT
+
+alt JWT válido
+
+    Backend -> Supabase : Eliminar comentario
+
+    Supabase --> Backend : Comentario eliminado
+
+    Backend --> Frontend : 204 No Content
+
+    Frontend --> Usuario : Comentario eliminado
+
+else JWT inválido
+
+    Backend --> Frontend : 401 Unauthorized
+
+    Frontend --> Usuario : Debe iniciar sesión
+
+end
+
+@enduml

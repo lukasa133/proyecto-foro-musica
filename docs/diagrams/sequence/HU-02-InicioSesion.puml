@@ -1,0 +1,33 @@
+@startuml
+
+actor Usuario
+
+participant Frontend
+participant "Backend (Express)" as Backend
+database Supabase
+
+Usuario -> Frontend : Ingresar correo y contraseña
+Frontend -> Backend : POST /auth/login
+Backend -> Backend : Validar datos
+Backend -> Supabase : Buscar usuario por email
+
+Supabase --> Backend : Resultado
+
+alt Usuario encontrado
+    Backend -> Backend : Comparar contraseña
+
+    alt Contraseña correcta
+        Backend -> Backend : Generar JWT
+
+        Backend --> Frontend : 200 OK + Token
+        Frontend --> Usuario : Inicio de sesión exitoso
+    else Contraseña incorrecta
+        Backend --> Frontend : 401 Unauthorized
+        Frontend --> Usuario : Credenciales inválidas
+    end
+
+else Usuario no existe
+    Backend --> Frontend : 404 Not Found
+    Frontend --> Usuario : Usuario no encontrado
+end
+@enduml

@@ -1,0 +1,38 @@
+@startuml
+
+actor Usuario
+
+participant Frontend
+participant "Backend (Express)" as Backend
+database Supabase
+
+Usuario -> Frontend : Escribe un comentario
+
+Frontend -> Backend : POST /posts/{id}/comments
+
+Backend -> Backend : Validar JWT
+
+alt JWT válido
+    Backend -> Backend : Validar comentario
+    Backend -> Supabase : Verificar que la publicación exista
+
+    alt Publicación encontrada
+        Backend -> Supabase : Insertar comentario
+
+        Supabase --> Backend : Comentario creado
+        Backend --> Frontend : 201 Created
+        Frontend --> Usuario : Comentario publicado
+
+    else Publicación no encontrada
+        Backend --> Frontend : 404 Not Found
+        Frontend --> Usuario : Publicación no encontrada
+
+    end
+
+else JWT inválido
+    Backend --> Frontend : 401 Unauthorized
+    Frontend --> Usuario : Debe iniciar sesión
+
+end
+
+@enduml

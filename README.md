@@ -219,6 +219,8 @@ Proyecto desarrollado como iniciativa personal de aprendizaje y práctica de des
 
 ---
 
+## Prueba de GitHub Actions
+
 # 📄 Licencia
 
 Este proyecto se distribuye bajo la licencia MIT.

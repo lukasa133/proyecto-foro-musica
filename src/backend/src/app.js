@@ -15,6 +15,10 @@ const app = express();
 app.use(express.json());
 // Importamos el modulo del cliente para Supabase
 const supabase = require("./infrastructure/database/supabaseClient");
+// Importamos las rutas de posts y las añadimos a la app.
+const postsRoutes = require("./presentation/routes/posts.routes.js");
+// Importamos las rutas de posts y las añadimos a la app.
+app.use(postsRoutes);
 
 // Método get que permitirá mostrar los registrado en la tabla health en Supabase.
 app.get("/health", async (req, res) => {

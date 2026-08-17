@@ -13,53 +13,10 @@ const express = require("express");
 const app = express();
 // Establecemos a express un middleware para interpretar peticiones en formato json.
 app.use(express.json());
-// Importamos el modulo del cliente para Supabase
-const supabase = require("./infrastructure/database/supabaseClient");
+
 // Importamos las rutas de posts y las añadimos a la app.
 const postsRoutes = require("./presentation/routes/posts.routes.js");
-// Importamos las rutas de posts y las añadimos a la app.
 app.use(postsRoutes);
-
-// Método get que permitirá mostrar los registrado en la tabla health en Supabase.
-app.get("/health", async (req, res) => {
-    const { data, error } = await supabase
-    .from("health")
-    .select("*");
-
-    if(error){
-        return res.status(500).json({
-            error:"Hubo un error"
-        });
-    }
-    
-    if(data.length === 0){
-        return res.json({
-            message:"No se ha encontrado datos registrados"
-        });
-    }
-    
-    return res.json(data);
-});
-
-// Método post que permite el envio de información para un registro en la tabla health de Supabase.
-app.post("/health", async (req, res) => {
-    const status = req.body.status;
-    
-    const { data, error } = await supabase
-    .from("health")
-    .insert({
-        status: status
-    })
-    .select();
-
-    if (error) {
-        return res.status(500).json({
-            error: error.message
-        });
-    }
-
-    return res.status(201).json(data);
-})
 
 // Permitimos la esportación del modulo de app.
 module.exports = app; 

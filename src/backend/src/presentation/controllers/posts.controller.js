@@ -32,7 +32,7 @@ const createPost = async (req, res) => {
             multimedia
         );
 
-        const post = await createPostUseCase.execute(createPostDTO);
+        const post = await createPostUseCase.execute(createPostDTO); // Se utiliza wait para 
 
         return res.status(201).json({
             message: "Post creado exitosamente",

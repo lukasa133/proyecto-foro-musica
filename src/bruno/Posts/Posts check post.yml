@@ -1,0 +1,26 @@
+info:
+  name: Posts check post
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: http://localhost:3000/posts
+  body:
+    type: json
+    data: |-
+      {
+        "title": "Viva la Vida de Coldplay",
+        "content": "Mi canción favorita de la banda",
+        "multimedia": {
+          "type": "spotify",
+          "url": "https://open.spotify.com/track/1mea3bSkSGXuIRvnydlB5b?si=XgWyDrYdRLeUsCGGhTVSJA&utm_source=copy-link&sci=spotify%3Acard-config%3A57wj2cnDXX3SDPsB5rfgKG"
+        }
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

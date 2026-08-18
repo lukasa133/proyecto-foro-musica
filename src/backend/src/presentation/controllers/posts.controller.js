@@ -1,11 +1,13 @@
 // Controlador para gestionar las operaciones relacionadas con las publicaciones o posts
 
 const CreatePostUseCase = require("../../domain/usecases/CreatePostUseCase");
-const PostRepositorySupabase = require("../../infrastructure/repositories/PostRepositorySupabase");
 const CreatePostDTO = require("../../application/dtos/CreatePostDTO");
+const PostRepositorySupabase = require("../../infrastructure/repositories/PostRepositorySupabase");
+const MultimediaRepositorySupabase = require("../../infrastructure/repositories/MultimediaRepositorySupabase");
 
 const postRepository = new PostRepositorySupabase();
-const createPostUseCase = new CreatePostUseCase(postRepository);
+const multimediaRepository = new MultimediaRepositorySupabase();
+const createPostUseCase = new CreatePostUseCase(postRepository, multimediaRepository);
 
 const createPost = async (req, res) => {
     try {
@@ -23,6 +25,28 @@ const createPost = async (req, res) => {
             return res.status(400).json({
                 error: "El contenido es obligatorio."
             });
+        }
+
+        if (multimedia) {
+            if (typeof multimedia !== "object") {
+                return res.status(400).json({
+                    error: "El campo multimedia debe ser un objeto."
+                });
+            }
+
+            const allowedTypes = ["audio", "spotify", "youtube"];
+
+            if (!allowedTypes.includes(multimedia.type)) {
+                return res.status(400).json({
+                    error: "El tipo de multimedia no es válido."
+                });
+            }
+
+            if (!multimedia.url || typeof multimedia.url !== "string") {
+                return res.status(400).json({
+                    error: "La URL de multimedia es obligatoria."
+                });
+            }
         }
 
         const createPostDTO = new CreatePostDTO(

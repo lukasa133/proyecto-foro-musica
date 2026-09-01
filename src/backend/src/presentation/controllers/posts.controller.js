@@ -2,16 +2,18 @@
 
 const CreatePostUseCase = require("../../domain/usecases/CreatePostUseCase");
 const CreatePostDTO = require("../../application/dtos/CreatePostDTO");
+
 const PostRepositorySupabase = require("../../infrastructure/repositories/PostRepositorySupabase");
 const MultimediaRepositorySupabase = require("../../infrastructure/repositories/MultimediaRepositorySupabase");
 
 const postRepository = new PostRepositorySupabase();
 const multimediaRepository = new MultimediaRepositorySupabase();
+
 const createPostUseCase = new CreatePostUseCase(postRepository, multimediaRepository);
 
 const createPost = async (req, res) => {
     try {
-        // Adquire title y content del body de la solicitud
+        // Adquiere title y content del body de la solicitud
         const { title, content, multimedia } = req.body;
         const authorId = req.user.id;
 
@@ -34,11 +36,11 @@ const createPost = async (req, res) => {
                 });
             }
 
-            const allowedTypes = ["audio", "spotify", "youtube"];
+            const allowedOrigins = ["local", "spotify", "youtube"];
 
-            if (!allowedTypes.includes(multimedia.type)) {
+            if (!allowedOrigins.includes(multimedia.origen)) {
                 return res.status(400).json({
-                    error: "El tipo de multimedia no es válido."
+                    error: "El origen de multimedia no es válido."
                 });
             }
 
@@ -49,6 +51,7 @@ const createPost = async (req, res) => {
             }
         }
 
+        // Utilizamos el DTO para representar los datos que se recibirán 
         const createPostDTO = new CreatePostDTO(
             title,
             content,
@@ -56,7 +59,7 @@ const createPost = async (req, res) => {
             multimedia
         );
 
-        const post = await createPostUseCase.execute(createPostDTO); // Se utiliza wait para 
+        const post = await createPostUseCase.execute(createPostDTO); // Se utiliza wait para que el sistema espere hasta que se reciba una respuesta
 
         return res.status(201).json({
             message: "Post creado exitosamente",
@@ -72,6 +75,4 @@ const createPost = async (req, res) => {
     }
 }
 
-module.exports = {
-    createPost
-};
+module.exports = { createPost };

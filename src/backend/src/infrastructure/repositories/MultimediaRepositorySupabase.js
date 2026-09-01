@@ -9,7 +9,8 @@ class MultimediaRepositorySupabase extends MultimediaRepository {
             .from("multimedia")
             .insert({
                 post_id: multimedia.postId,
-                tipo: multimedia.type,
+                tipo: "audio",
+                origen: multimedia.origen,
                 url: multimedia.url
             })
             .select();
